@@ -8,17 +8,17 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-  server:
+  welcome-server:
     build:
       context: ./app
     links:
-      - mongo
+      - welcome-mongo
     environment:
       NODE_ENV: production
     ports:
       - 3000:3000
 
-  mongo:
+  welcome-mongo:
     image: mongo
     container_name: mongo
     ports:
